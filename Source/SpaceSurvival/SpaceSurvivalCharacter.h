@@ -12,6 +12,7 @@ class USceneComponent;
 class UCameraComponent;
 class UAnimMontage;
 class USoundBase;
+class USprintComponent;
 
 // Declaration of the delegate that will be called when the Primary Action is triggered
 // It is declared as dynamic so it can be accessed also in Blueprints
@@ -99,5 +100,24 @@ public:
 	/** Returns FirstPersonCameraComponent subobject **/
 	UCameraComponent* GetFirstPersonCameraComponent() const { return FirstPersonCameraComponent; }
 
+// Custom values
+
+public:
+
+	virtual void Tick(float DeltaSeconds) override;
+	
+	bool CanSprint;
+	bool IsSprinting;
+	int SprintModifier;
+	float MaxSprintSpeed;
+	float NormalSpeed;
+	
+protected:
+	USprintComponent* SprintComponent;
+
+private:
+	void Sprint();
+	void StopSprint();
+	
 };
 
