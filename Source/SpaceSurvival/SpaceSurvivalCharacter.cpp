@@ -1,6 +1,8 @@
 // Copyright Epic Games, Inc. All Rights Reserved.
 
 #include "SpaceSurvivalCharacter.h"
+
+#include "NeedsComponent.h"
 #include "SpaceSurvivalProjectile.h"
 #include "SprintComponent.h"
 #include "Animation/AnimInstance.h"
@@ -48,6 +50,10 @@ ASpaceSurvivalCharacter::ASpaceSurvivalCharacter(){
 
 	NormalSpeed = this->GetCharacterMovement()->MaxWalkSpeed;
 	MaxSprintSpeed = NormalSpeed * SprintModifier;
+
+	// Needs
+
+	NeedsComponent = CreateDefaultSubobject<UNeedsComponent>(TEXT("NeedsComponent"));
 	
 }
 

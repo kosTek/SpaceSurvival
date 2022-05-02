@@ -13,6 +13,7 @@ class UCameraComponent;
 class UAnimMontage;
 class USoundBase;
 class USprintComponent;
+class UNeedsComponent;
 
 // Declaration of the delegate that will be called when the Primary Action is triggered
 // It is declared as dynamic so it can be accessed also in Blueprints
@@ -114,6 +115,7 @@ public:
 	
 protected:
 	USprintComponent* SprintComponent;
+	UNeedsComponent* NeedsComponent;
 
 private:
 	void Sprint();

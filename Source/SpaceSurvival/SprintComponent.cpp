@@ -43,7 +43,7 @@ void USprintComponent::DrainStamina() {
 		Stamina -= StaminaDrainRate;
 	}
 
-	UE_LOG(LogTemp, Warning, TEXT("[Stamina] Draining at %d rate. Current stamina: %d"), StaminaDrainRate, Stamina);
+	//UE_LOG(LogTemp, Warning, TEXT("[Stamina] Draining at %d rate. Current stamina: %d"), StaminaDrainRate, Stamina);
 }
 
 void USprintComponent::RegenerateStamina() {
@@ -51,7 +51,7 @@ void USprintComponent::RegenerateStamina() {
 		Stamina += StaminaRecoveryRate;
 	}
 
-	UE_LOG(LogTemp, Warning, TEXT("[Stamina] Recovering at %d rate. Current stamina: %d"), StaminaRecoveryRate, Stamina);
+	//UE_LOG(LogTemp, Warning, TEXT("[Stamina] Recovering at %d rate. Current stamina: %d"), StaminaRecoveryRate, Stamina);
 }
 
 bool USprintComponent::CanSprint() {
