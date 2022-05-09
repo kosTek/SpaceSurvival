@@ -7,7 +7,7 @@
 
 // Sets default values for this component's properties
 UInventoryComponent::UInventoryComponent(){
-	GridSize = 10;
+	GridSize = 28;
 }
 
 
@@ -33,6 +33,8 @@ bool UInventoryComponent::AddItem(UItem* Item) {
 	
 	OnInventoryUpdated.Broadcast();
 
+	UE_LOG(LogTemp, Warning, TEXT("Added item!"));
+	
 	return true;
 }
 
@@ -49,7 +51,29 @@ bool UInventoryComponent::RemoveItem(UItem* Item) {
 	return false;
 }
 
+bool UInventoryComponent::RemoveItem(int ItemIndex) {
+	if (ItemIndex >= 0 && ItemIndex < GridSize + 1) {
+
+		StoredItems[ItemIndex] = nullptr;
+		
+		OnInventoryUpdated.Broadcast();
+		
+		return true;
+	}
+
+	return false;
+}
+
 bool UInventoryComponent::SwitchItems(int FromIndex, int ToIndex) {
+
+	auto Item = StoredItems[FromIndex];
+	auto SwitchedItem = StoredItems[ToIndex];
+
+	StoredItems[FromIndex] = SwitchedItem;
+	StoredItems[ToIndex] = Item;
+
+	OnInventoryUpdated.Broadcast();
+	
 	return false;
 }
 

@@ -27,6 +27,9 @@ public:
 	bool AddItem(class UItem* Item);
 	bool RemoveItem(class UItem* Item);
 
+	UFUNCTION(BlueprintCallable)
+	bool RemoveItem(int ItemIndex);
+
 	bool SwitchItems(int FromIndex, int ToIndex);
 	
 	UPROPERTY(EditDefaultsOnly, Instanced)
