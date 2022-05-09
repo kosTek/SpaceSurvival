@@ -2,6 +2,8 @@
 
 #include "SpaceSurvivalCharacter.h"
 
+#include "InventoryComponent.h"
+#include "Item.h"
 #include "NeedsComponent.h"
 #include "SpaceSurvivalProjectile.h"
 #include "SprintComponent.h"
@@ -54,6 +56,10 @@ ASpaceSurvivalCharacter::ASpaceSurvivalCharacter(){
 	// Needs
 
 	NeedsComponent = CreateDefaultSubobject<UNeedsComponent>(TEXT("NeedsComponent"));
+
+	// Inventory
+
+	Inventory = CreateDefaultSubobject<UInventoryComponent>(TEXT("InventoryComponent"));
 	
 }
 
@@ -181,5 +187,12 @@ void ASpaceSurvivalCharacter::Sprint() {
 
 void ASpaceSurvivalCharacter::StopSprint() {
 	IsSprinting = false;
+}
+
+void ASpaceSurvivalCharacter::UseItem(UItem* Item) {
+	if (Item) {
+		Item->Use(this);
+		Item->OnUse(this);
+	}
 }
 

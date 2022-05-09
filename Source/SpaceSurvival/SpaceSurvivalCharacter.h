@@ -14,6 +14,7 @@ class UAnimMontage;
 class USoundBase;
 class USprintComponent;
 class UNeedsComponent;
+class UInventoryComponent;
 
 // Declaration of the delegate that will be called when the Primary Action is triggered
 // It is declared as dynamic so it can be accessed also in Blueprints
@@ -112,14 +113,29 @@ public:
 	int SprintModifier;
 	float MaxSprintSpeed;
 	float NormalSpeed;
+
 	
 protected:
 	USprintComponent* SprintComponent;
-	UNeedsComponent* NeedsComponent;
+	
 
+public:
+
+	UNeedsComponent* NeedsComponent;
+	
 private:
 	void Sprint();
 	void StopSprint();
+
+// Items & Inventory
+	
+public:
+
+	UFUNCTION(BlueprintCallable, Category = "Items")
+	void UseItem(class UItem* Item);
+
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Camera, meta=(AllowPrivateAccess = "true"))
+	UInventoryComponent* Inventory;
 	
 };
 
