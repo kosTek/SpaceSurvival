@@ -24,12 +24,13 @@ protected:
 
 public:	
 
-	bool AddItem(class UItem* Item);
+	bool AddItem(class UItem* Item, int Index = -1);
 	bool RemoveItem(class UItem* Item);
 
 	UFUNCTION(BlueprintCallable)
 	bool RemoveItem(int ItemIndex);
 
+	UFUNCTION(BlueprintCallable)
 	bool SwitchItems(int FromIndex, int ToIndex);
 	
 	UPROPERTY(EditDefaultsOnly, Instanced)
