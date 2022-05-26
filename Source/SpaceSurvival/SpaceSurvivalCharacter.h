@@ -20,6 +20,10 @@ class UInventoryComponent;
 // It is declared as dynamic so it can be accessed also in Blueprints
 DECLARE_DYNAMIC_MULTICAST_DELEGATE(FOnUseItem);
 
+DECLARE_DYNAMIC_MULTICAST_DELEGATE(FOnPrimaryFire);
+DECLARE_DYNAMIC_MULTICAST_DELEGATE(FOnSecondaryFire);
+DECLARE_DYNAMIC_MULTICAST_DELEGATE(FOnReload);
+
 UCLASS(config=Game)
 class ASpaceSurvivalCharacter : public ACharacter
 {
