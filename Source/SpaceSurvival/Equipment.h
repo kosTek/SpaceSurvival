@@ -6,6 +6,9 @@
 #include "GameFramework/Actor.h"
 #include "Equipment.generated.h"
 
+class UStaticMesh;
+class ASpaceSurvivalCharacter;
+
 UCLASS()
 class SPACESURVIVAL_API AEquipment : public AActor
 {
@@ -22,12 +25,15 @@ protected:
 public:	
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
+	
+	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category = "Equipment")
+	UStaticMesh* StaticMesh;
 
-	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category = "Item")
-	class UStaticMesh* Mesh;
-
+	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category = "Equipment")
+	FName EquipmentName;
+	
 	UPROPERTY()
-	class ASpaceSurvivalCharacter* Player;
+	ASpaceSurvivalCharacter* Player;
 	
 	UFUNCTION()
 	virtual void PrimaryFire();
@@ -38,6 +44,12 @@ public:
 	UFUNCTION()
 	virtual void Reload();
 
+	UFUNCTION(BlueprintCallable, Category = "Equipment")
+	void OnEquipmentSpawn(ASpaceSurvivalCharacter* Character);
+
+	UFUNCTION(BlueprintCallable, Category = "Equipment")
+	void OnEquipmentDespawn();
+	
 	UFUNCTION(BlueprintImplementableEvent)
 	void OnPrimaryFire();
 

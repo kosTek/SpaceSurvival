@@ -140,6 +140,27 @@ public:
 
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Camera, meta=(AllowPrivateAccess = "true"))
 	UInventoryComponent* Inventory;
+
+// Equipment
+
+	UPROPERTY(BlueprintReadWrite, Category = "Equipment")
+	FName CurrentEquipment;
+
+	UFUNCTION(BlueprintCallable, Category =  "Equipment")
+	void SetCurrentEquipment(FName Name);
+	
+	UPROPERTY(BlueprintAssignable, Category = "Equipment")
+	FOnPrimaryFire OnPrimaryFire;
+
+	UPROPERTY(BlueprintAssignable, Category = "Equipment")
+	FOnSecondaryFire OnSecondaryFire;
+
+	UPROPERTY(BlueprintAssignable, Category = "Equipment")
+	FOnReload OnReload;
+	
+	void PrimaryFire();
+	void SecondaryFire();
+	void Reload();
 	
 };
 

@@ -60,6 +60,10 @@ ASpaceSurvivalCharacter::ASpaceSurvivalCharacter(){
 	// Inventory
 
 	Inventory = CreateDefaultSubobject<UInventoryComponent>(TEXT("InventoryComponent"));
+
+	// Equipment
+
+	CurrentEquipment = TEXT("None");
 	
 }
 
@@ -195,4 +199,25 @@ void ASpaceSurvivalCharacter::UseItem(UItem* Item) {
 		Item->OnUse(this);
 	}
 }
+
+// Equipment
+
+void ASpaceSurvivalCharacter::SetCurrentEquipment(FName Name) {
+	CurrentEquipment = Name;
+}
+
+
+void ASpaceSurvivalCharacter::PrimaryFire() {
+	OnPrimaryFire.Broadcast();
+}
+
+void ASpaceSurvivalCharacter::SecondaryFire() {
+	OnSecondaryFire.Broadcast();
+}
+
+void ASpaceSurvivalCharacter::Reload() {
+	OnReload.Broadcast();
+}
+
+
 
