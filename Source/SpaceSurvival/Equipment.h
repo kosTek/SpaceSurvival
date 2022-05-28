@@ -31,6 +31,9 @@ public:
 
 	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category = "Equipment")
 	FName EquipmentName;
+
+	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category = "Equipment")
+	int EquipmentID;
 	
 	UPROPERTY()
 	ASpaceSurvivalCharacter* Player;

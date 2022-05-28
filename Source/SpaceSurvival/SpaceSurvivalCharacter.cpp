@@ -63,7 +63,7 @@ ASpaceSurvivalCharacter::ASpaceSurvivalCharacter(){
 
 	// Equipment
 
-	CurrentEquipment = TEXT("None");
+	CurrentEquipment = nullptr;
 	
 }
 
@@ -202,8 +202,11 @@ void ASpaceSurvivalCharacter::UseItem(UItem* Item) {
 
 // Equipment
 
-void ASpaceSurvivalCharacter::SetCurrentEquipment(FName Name) {
-	CurrentEquipment = Name;
+void ASpaceSurvivalCharacter::SetCurrentEquipment(AEquipment* Equipment) {
+	if (Equipment != nullptr && Equipment != CurrentEquipment) {
+		CurrentEquipment = Equipment;
+		OnEquipmentChange.Broadcast();
+	}
 }
 
 

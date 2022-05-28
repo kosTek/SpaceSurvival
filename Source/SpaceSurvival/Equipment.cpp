@@ -49,7 +49,7 @@ void AEquipment::OnEquipmentSpawn(ASpaceSurvivalCharacter* Character) {
 		Player->OnSecondaryFire.AddDynamic(this, &AEquipment::SecondaryFire);
 		Player->OnReload.AddDynamic(this, &AEquipment::Reload);
 
-		Player->SetCurrentEquipment(this->EquipmentName);
+		Player->SetCurrentEquipment(this);
 		
 		UE_LOG(LogTemp, Warning, TEXT("[Equipment] OnEquipmentSpawn called successfully!"));
 	}

@@ -15,6 +15,7 @@ class USoundBase;
 class USprintComponent;
 class UNeedsComponent;
 class UInventoryComponent;
+class AEquipment;
 
 // Declaration of the delegate that will be called when the Primary Action is triggered
 // It is declared as dynamic so it can be accessed also in Blueprints
@@ -23,6 +24,7 @@ DECLARE_DYNAMIC_MULTICAST_DELEGATE(FOnUseItem);
 DECLARE_DYNAMIC_MULTICAST_DELEGATE(FOnPrimaryFire);
 DECLARE_DYNAMIC_MULTICAST_DELEGATE(FOnSecondaryFire);
 DECLARE_DYNAMIC_MULTICAST_DELEGATE(FOnReload);
+DECLARE_DYNAMIC_MULTICAST_DELEGATE(FOnEquipmentChange);
 
 UCLASS(config=Game)
 class ASpaceSurvivalCharacter : public ACharacter
@@ -51,6 +53,7 @@ public:
 	/** Delegate to whom anyone can subscribe to receive this event */
 	UPROPERTY(BlueprintAssignable, Category = "Interaction")
 	FOnUseItem OnUseItem;
+	
 protected:
 	
 	/** Fires a projectile. */
@@ -144,10 +147,13 @@ public:
 // Equipment
 
 	UPROPERTY(BlueprintReadWrite, Category = "Equipment")
-	FName CurrentEquipment;
+	AEquipment* CurrentEquipment;
 
 	UFUNCTION(BlueprintCallable, Category =  "Equipment")
-	void SetCurrentEquipment(FName Name);
+	void SetCurrentEquipment(AEquipment* Equipment);
+
+	UPROPERTY(BlueprintAssignable, Category = "Equipment")
+	FOnEquipmentChange OnEquipmentChange;
 	
 	UPROPERTY(BlueprintAssignable, Category = "Equipment")
 	FOnPrimaryFire OnPrimaryFire;
