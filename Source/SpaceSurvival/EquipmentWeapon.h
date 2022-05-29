@@ -11,6 +11,10 @@
  */
 
 class ASpaceSurvivalProjectile;
+class UAnimMontage;
+class USoundWave;
+
+DECLARE_DYNAMIC_MULTICAST_DELEGATE(FOnSingleFire);
 
 UCLASS()
 class SPACESURVIVAL_API AEquipmentWeapon : public AEquipment {
@@ -24,7 +28,16 @@ public:
 	virtual void SecondaryFire() override;
 	virtual void Reload() override;
 
-	UPROPERTY(EditDefaultsOnly, Category=Projectile)
+	UPROPERTY(EditDefaultsOnly, Category = "Equipment")
 	TSubclassOf<ASpaceSurvivalProjectile> ProjectileClass;
+	
+	UPROPERTY(EditDefaultsOnly, Category = "Equipment")
+	UAnimMontage* SingleFireMontage;
+
+	UPROPERTY(EditDefaultsOnly, Category = "Equipment")
+	USoundWave* SoundWave;
+
+	UPROPERTY(BlueprintAssignable, Category = "Equipment")
+	FOnSingleFire OnSingleFire;
 	
 };

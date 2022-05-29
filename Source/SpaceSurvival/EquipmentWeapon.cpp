@@ -14,6 +14,10 @@ void AEquipmentWeapon::PrimaryFire() {
 	if (!CanPrimary) {
 		return;
 	}
+
+	if (SingleFire) {
+		OnSingleFire.Broadcast();
+	}
 	
 	if (ProjectileClass != nullptr){
 		UWorld* const World = GetWorld();
