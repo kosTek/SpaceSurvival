@@ -10,6 +10,8 @@ AEquipment::AEquipment(){
  	// Set this actor to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
 	PrimaryActorTick.bCanEverTick = false;
 
+	CanPrimary = true;
+	
 }
 
 // Called when the game starts or when spawned
@@ -60,6 +62,10 @@ void AEquipment::OnEquipmentSpawn(ASpaceSurvivalCharacter* Character) {
 
 void AEquipment::OnEquipmentDespawn() {
 	
+}
+
+void AEquipment::SetCanPrimary() {
+	CanPrimary = true;
 }
 
 

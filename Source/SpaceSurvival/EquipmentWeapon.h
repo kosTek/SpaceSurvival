@@ -9,6 +9,9 @@
 /**
  * 
  */
+
+class ASpaceSurvivalProjectile;
+
 UCLASS()
 class SPACESURVIVAL_API AEquipmentWeapon : public AEquipment {
 	GENERATED_BODY()
@@ -20,5 +23,8 @@ public:
 	virtual void PrimaryFire() override;
 	virtual void SecondaryFire() override;
 	virtual void Reload() override;
+
+	UPROPERTY(EditDefaultsOnly, Category=Projectile)
+	TSubclassOf<ASpaceSurvivalProjectile> ProjectileClass;
 	
 };

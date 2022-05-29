@@ -2,6 +2,7 @@
 
 #include "SpaceSurvivalCharacter.h"
 
+#include "Equipment.h"
 #include "InventoryComponent.h"
 #include "Item.h"
 #include "NeedsComponent.h"
@@ -64,18 +65,22 @@ ASpaceSurvivalCharacter::ASpaceSurvivalCharacter(){
 	// Equipment
 
 	CurrentEquipment = nullptr;
+	IsPrimaryFire = false;
+	IsSecondaryFire = false;
 	
 }
 
 void ASpaceSurvivalCharacter::BeginPlay(){
 	// Call the base class  
 	Super::BeginPlay();
-
+	
 }
 
 void ASpaceSurvivalCharacter::Tick(float DeltaSeconds) {
 	Super::Tick(DeltaSeconds);
 
+	EquipmentTick();
+	
 	CanSprint = SprintComponent->CanSprint();
 
 	if (IsSprinting) {
@@ -102,9 +107,6 @@ void ASpaceSurvivalCharacter::SetupPlayerInputComponent(class UInputComponent* P
 	PlayerInputComponent->BindAction("Jump", IE_Pressed, this, &ACharacter::Jump);
 	PlayerInputComponent->BindAction("Jump", IE_Released, this, &ACharacter::StopJumping);
 
-	// Bind fire event
-	PlayerInputComponent->BindAction("PrimaryAction", IE_Pressed, this, &ASpaceSurvivalCharacter::OnPrimaryAction);
-
 	// Enable touchscreen input
 	EnableTouchscreenMovement(PlayerInputComponent);
 
@@ -123,6 +125,15 @@ void ASpaceSurvivalCharacter::SetupPlayerInputComponent(class UInputComponent* P
 	//Sprint
 	PlayerInputComponent->BindAction("Sprint", IE_Pressed, this, &ASpaceSurvivalCharacter::Sprint);
 	PlayerInputComponent->BindAction("Sprint", IE_Released, this, &ASpaceSurvivalCharacter::StopSprint);
+
+	// Equipment
+
+		// Remove &ASpaceSurvivalCharacter::OnPrimaryAction
+	
+	// Bind fire event
+	PlayerInputComponent->BindAction("PrimaryFire", IE_Pressed, this, &ASpaceSurvivalCharacter::PrimaryFire);
+	PlayerInputComponent->BindAction("PrimaryFire", IE_Released, this, &ASpaceSurvivalCharacter::StopPrimaryFire);
+	
 }
 
 void ASpaceSurvivalCharacter::OnPrimaryAction(){
@@ -209,13 +220,40 @@ void ASpaceSurvivalCharacter::SetCurrentEquipment(AEquipment* Equipment) {
 	}
 }
 
+// Tick for Primary and Secondary
+void ASpaceSurvivalCharacter::EquipmentTick() {
+	if (IsPrimaryFire) {
+		OnPrimaryFire.Broadcast();
+		
+		if (CurrentEquipment->SingleFire) {
+			IsPrimaryFire = false;
+		}
+		
+	}
+}
 
 void ASpaceSurvivalCharacter::PrimaryFire() {
-	OnPrimaryFire.Broadcast();
+	if (CurrentEquipment == nullptr) {
+		return;
+	}
+	
+	IsPrimaryFire = true;
+}
+
+void ASpaceSurvivalCharacter::StopPrimaryFire() {
+	if (CurrentEquipment == nullptr) {
+		return;
+	}
+	
+	IsPrimaryFire = false;
 }
 
 void ASpaceSurvivalCharacter::SecondaryFire() {
-	OnSecondaryFire.Broadcast();
+	IsSecondaryFire = true;
+}
+
+void ASpaceSurvivalCharacter::StopSecondaryFire() {
+	IsSecondaryFire = false;
 }
 
 void ASpaceSurvivalCharacter::Reload() {

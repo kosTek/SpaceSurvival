@@ -163,10 +163,20 @@ public:
 
 	UPROPERTY(BlueprintAssignable, Category = "Equipment")
 	FOnReload OnReload;
+
+	UPROPERTY(BlueprintReadOnly, Category = "Equipment")
+	bool IsPrimaryFire;
+	bool IsSecondaryFire;
 	
 	void PrimaryFire();
+	void StopPrimaryFire();
+	
 	void SecondaryFire();
+	void StopSecondaryFire();
+	
 	void Reload();
+
+	void EquipmentTick();
 	
 };
 

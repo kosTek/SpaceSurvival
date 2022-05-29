@@ -61,7 +61,27 @@ public:
 
 	UFUNCTION(BlueprintImplementableEvent)
 	void OnReload();
+
+// Delay
+
+	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category = "Equipment")
+	bool SingleFire;
 	
+	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category = "Equipment")
+	float PrimaryFireDelaySeconds;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Equipment")
+	FVector MuzzleOffset;
 	
+protected:
 	
+	UFUNCTION()
+	void SetCanPrimary();
+
+	UPROPERTY()
+	bool CanPrimary;
+	
+	UPROPERTY()
+	FTimerHandle PrimaryFireDelayHandle;
+
 };
