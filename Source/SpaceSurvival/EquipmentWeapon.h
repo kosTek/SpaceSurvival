@@ -31,10 +31,10 @@ public:
 	UPROPERTY(EditDefaultsOnly, Category = "Equipment")
 	TSubclassOf<ASpaceSurvivalProjectile> ProjectileClass;
 	
-	UPROPERTY(EditDefaultsOnly, Category = "Equipment")
+	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category = "Equipment")
 	UAnimMontage* SingleFireMontage;
 
-	UPROPERTY(EditDefaultsOnly, Category = "Equipment")
+	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category = "Equipment")
 	USoundWave* SoundWave;
 
 	UPROPERTY(BlueprintAssignable, Category = "Equipment")

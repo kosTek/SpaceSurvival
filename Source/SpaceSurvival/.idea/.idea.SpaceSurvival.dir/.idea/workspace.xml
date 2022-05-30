@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="fa1935b4-e8ee-46a2-b9d8-23db4dcac805" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../../.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../../.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../.idea/.idea.SpaceSurvival/.idea/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../../.idea/.idea.SpaceSurvival/.idea/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../.idea/.idea.SpaceSurvival/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../.idea/.idea.SpaceSurvival/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../.idea/.idea.SpaceSurvival/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../.idea/.idea.SpaceSurvival/.idea/indexLayout.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../.idea/.idea.SpaceSurvival/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../.idea/.idea.SpaceSurvival/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../.idea/.idea.SpaceSurvival/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../.idea/.idea.SpaceSurvival/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Config/DefaultEditorPerProjectUserSettings.ini" beforeDir="false" afterPath="$PROJECT_DIR$/../../Config/DefaultEditorPerProjectUserSettings.ini" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Config/DefaultEngine.ini" beforeDir="false" afterPath="$PROJECT_DIR$/../../Config/DefaultEngine.ini" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Config/DefaultGame.ini" beforeDir="false" afterPath="$PROJECT_DIR$/../../Config/DefaultGame.ini" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Config/HoloLens/HoloLensEngine.ini" beforeDir="false" afterPath="$PROJECT_DIR$/../../Config/HoloLens/HoloLensEngine.ini" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Content/Equipment/Blueprint/Weapons/BP_EQ_Wep_C55.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/../../Content/Equipment/Blueprint/Weapons/BP_EQ_Wep_C55.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Content/FirstPerson/Blueprints/BP_FirstPersonCharacter.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/../../Content/FirstPerson/Blueprints/BP_FirstPersonCharacter.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Content/Player/Animations/Viewmodel_Anim_BP.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/../../Content/Player/Animations/Viewmodel_Anim_BP.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SpaceSurvival.Target.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../SpaceSurvival.Target.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/InventoryComponent.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/InventoryComponent.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/InventoryComponent.h" beforeDir="false" afterPath="$PROJECT_DIR$/InventoryComponent.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Item.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Item.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Item.h" beforeDir="false" afterPath="$PROJECT_DIR$/Item.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ItemEquipment.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/ItemEquipment.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ItemEquipment.h" beforeDir="false" afterPath="$PROJECT_DIR$/ItemEquipment.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ItemFood.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/ItemFood.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ItemFood.h" beforeDir="false" afterPath="$PROJECT_DIR$/ItemFood.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/NeedsComponent.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/NeedsComponent.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/NeedsComponent.h" beforeDir="false" afterPath="$PROJECT_DIR$/NeedsComponent.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpaceSurvival.Build.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SpaceSurvival.Build.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpaceSurvival.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/SpaceSurvival.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpaceSurvival.h" beforeDir="false" afterPath="$PROJECT_DIR$/SpaceSurvival.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpaceSurvivalGameMode.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/SpaceSurvivalGameMode.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpaceSurvivalGameMode.h" beforeDir="false" afterPath="$PROJECT_DIR$/SpaceSurvivalGameMode.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpaceSurvivalProjectile.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/SpaceSurvivalProjectile.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpaceSurvivalProjectile.h" beforeDir="false" afterPath="$PROJECT_DIR$/SpaceSurvivalProjectile.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SprintComponent.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/SprintComponent.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SprintComponent.h" beforeDir="false" afterPath="$PROJECT_DIR$/SprintComponent.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TP_PickUpComponent.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/TP_PickUpComponent.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TP_PickUpComponent.h" beforeDir="false" afterPath="$PROJECT_DIR$/TP_PickUpComponent.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TP_WeaponComponent.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/TP_WeaponComponent.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TP_WeaponComponent.h" beforeDir="false" afterPath="$PROJECT_DIR$/TP_WeaponComponent.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SpaceSurvivalEditor.Target.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../SpaceSurvivalEditor.Target.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../SpaceSurvival.uproject" beforeDir="false" afterPath="$PROJECT_DIR$/../../SpaceSurvival.uproject" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ProjectId" id="29rTROSBEl02lJyQLmOiRZIW2xY" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false"
+  }
+}]]></component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <created>1653870198540</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1653870198540</updated>
+      <workItem from="1653870204784" duration="28000" />
+    </task>
+    <servers />
+  </component>
+  <component name="UnityCheckinConfiguration" checkUnsavedScenes="true" />
+  <component name="UnityUnitTestConfiguration" currentTestLauncher="NUnit" />
+  <component name="VcsManagerConfiguration">
+    <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+  </component>
+</project>
