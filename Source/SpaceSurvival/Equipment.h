@@ -9,6 +9,8 @@
 class UStaticMesh;
 class ASpaceSurvivalCharacter;
 
+DECLARE_DYNAMIC_MULTICAST_DELEGATE(FOnReloadPressed);
+
 UCLASS()
 class SPACESURVIVAL_API AEquipment : public AActor
 {
@@ -72,6 +74,18 @@ public:
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Equipment")
 	FVector MuzzleOffset;
+
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly)
+	bool Reloading;
+
+	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category = "Equipment");
+	float ReloadTime;
+
+	UPROPERTY(BlueprintAssignable, Category = "Equipment")
+	FOnReloadPressed OnReloadPressed;
+	
+	UFUNCTION(BlueprintCallable, Category = "Equipment")
+	void ChangeReloadingState();
 	
 protected:
 	
@@ -83,5 +97,8 @@ protected:
 	
 	UPROPERTY()
 	FTimerHandle PrimaryFireDelayHandle;
+	
+	UPROPERTY()
+	FTimerHandle ReloadTimerHandle;
 
 };

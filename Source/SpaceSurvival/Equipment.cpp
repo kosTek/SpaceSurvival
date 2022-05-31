@@ -11,6 +11,8 @@ AEquipment::AEquipment(){
 	PrimaryActorTick.bCanEverTick = false;
 
 	CanPrimary = true;
+
+	PrimaryFireDelaySeconds = 1.f;
 	
 }
 
@@ -36,6 +38,11 @@ void AEquipment::SecondaryFire() {
 
 void AEquipment::Reload() {
 	
+}
+
+void AEquipment::ChangeReloadingState() {
+	Reloading = !Reloading;
+	UE_LOG(LogTemp, Warning, TEXT("[Equipment] Weapon Reload State Changed!"));
 }
 
 void AEquipment::OnEquipmentSpawn(ASpaceSurvivalCharacter* Character) {

@@ -130,9 +130,12 @@ void ASpaceSurvivalCharacter::SetupPlayerInputComponent(class UInputComponent* P
 
 		// Remove &ASpaceSurvivalCharacter::OnPrimaryAction
 	
-	// Bind fire event
+		// Bind fire event
 	PlayerInputComponent->BindAction("PrimaryFire", IE_Pressed, this, &ASpaceSurvivalCharacter::PrimaryFire);
 	PlayerInputComponent->BindAction("PrimaryFire", IE_Released, this, &ASpaceSurvivalCharacter::StopPrimaryFire);
+
+		// Bind reload
+	PlayerInputComponent->BindAction("Reload", IE_Pressed, this, &ASpaceSurvivalCharacter::Reload);
 	
 }
 
@@ -222,7 +225,7 @@ void ASpaceSurvivalCharacter::SetCurrentEquipment(AEquipment* Equipment) {
 
 // Tick for Primary and Secondary
 void ASpaceSurvivalCharacter::EquipmentTick() {
-	if (IsPrimaryFire) {
+	if (IsPrimaryFire && !CurrentEquipment->Reloading) {
 		OnPrimaryFire.Broadcast();
 		
 		if (CurrentEquipment->SingleFire) {

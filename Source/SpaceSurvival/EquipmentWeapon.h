@@ -39,5 +39,20 @@ public:
 
 	UPROPERTY(BlueprintAssignable, Category = "Equipment")
 	FOnSingleFire OnSingleFire;
+
+	UFUNCTION()
+	void ReloadWeapon();
+	
+	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category = "Equipment")
+	int MaxAmmo;
+
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Equipment")
+	int CurrentAmmo;
+
+	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category = "Equipment")
+	int NumberOfAmmoRemovedOnShot;
+
+	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category = "Equipment")
+	USoundWave* NoAmmoSound;
 	
 };
