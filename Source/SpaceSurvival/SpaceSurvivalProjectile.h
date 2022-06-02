@@ -6,7 +6,8 @@
 #include "GameFramework/Actor.h"
 #include "SpaceSurvivalProjectile.generated.h"
 
-class USphereComponent;
+class UBoxComponent;
+class USceneComponent;
 class UProjectileMovementComponent;
 
 UCLASS(config=Game)
@@ -14,24 +15,25 @@ class ASpaceSurvivalProjectile : public AActor
 {
 	GENERATED_BODY()
 
-	/** Sphere collision component */
-	UPROPERTY(VisibleDefaultsOnly, Category=Projectile)
-	USphereComponent* CollisionComp;
-
-	/** Projectile movement component */
-	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Movement, meta = (AllowPrivateAccess = "true"))
-	UProjectileMovementComponent* ProjectileMovement;
+	UPROPERTY(VisibleAnywhere, Category = "Projectile")
+	USceneComponent* SceneComponent;
 
 public:
 	ASpaceSurvivalProjectile();
 
+	/** Projectile movement component */
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Movement, meta = (AllowPrivateAccess = "true"))
+	UProjectileMovementComponent* ProjectileMovement;
+	
 	/** called when projectile hits something */
-	UFUNCTION()
+	UFUNCTION(BlueprintCallable, Category = "Projectile")
 	void OnHit(UPrimitiveComponent* HitComp, AActor* OtherActor, UPrimitiveComponent* OtherComp, FVector NormalImpulse, const FHitResult& Hit);
 
-	/** Returns CollisionComp subobject **/
-	USphereComponent* GetCollisionComp() const { return CollisionComp; }
 	/** Returns ProjectileMovement subobject **/
 	UProjectileMovementComponent* GetProjectileMovement() const { return ProjectileMovement; }
+
+	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category = "Projectile")
+	int MaxBounces;
+	
 };
 
