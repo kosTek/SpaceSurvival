@@ -28,11 +28,9 @@ ASpaceSurvivalProjectile::ASpaceSurvivalProjectile() {
 }
 
 void ASpaceSurvivalProjectile::OnHit(UPrimitiveComponent* HitComp, AActor* OtherActor, UPrimitiveComponent* OtherComp, FVector NormalImpulse, const FHitResult& Hit){
-	UE_LOG(LogTemp, Warning, TEXT("[Projectile] Overlap!"));
 	// Only add impulse and destroy projectile if we hit a physics
 	if ((OtherActor != nullptr) && (OtherActor != this) && (OtherComp != nullptr)){
-
-		UE_LOG(LogTemp, Warning, TEXT("[Projectile] Hit!"));
+		
 		
 	}
 	if (ProjectileMovement->bShouldBounce) {
