@@ -21,7 +21,10 @@ public:
 	class UStaticMesh* Mesh;
 
 	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category = "Item")
-	class UTexture2D* Thumbnail;
+	class UTexture2D* InventoryThumbnail;
+
+	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category = "Item")
+	class UTexture2D* DragThumbnail;
 
 	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category = "Item")
 	FText ItemName;

@@ -9,6 +9,9 @@
 /**
  * 
  */
+
+class UAnimMontage;
+
 UCLASS()
 class SPACESURVIVAL_API UItemEquipment : public UItem
 {
@@ -16,9 +19,15 @@ class SPACESURVIVAL_API UItemEquipment : public UItem
 
 public:
 
-	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category = "Equipment", meta = (ClampMin = 0.0))
-	class UItemEquipment* EquipmentReference;
+	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category = "Item", meta = (ClampMin = 0.0))
+	class UTexture2D* EquipmentSlotThumbnail;
 	
+	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category = "Item", meta = (ClampMin = 0.0))
+	class AEquipment* EquipmentReference;
+
+	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category = "Item")
+	UAnimMontage* EquipAnimation;
+
 protected:
 
 	virtual void Use(ASpaceSurvivalCharacter* Player) override;
