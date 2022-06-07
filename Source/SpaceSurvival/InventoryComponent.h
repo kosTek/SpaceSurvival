@@ -24,6 +24,7 @@ protected:
 
 public:	
 
+	// Inventory
 	bool AddItem(class UItem* Item, int Index = -1);
 	bool RemoveItem(class UItem* Item);
 
@@ -44,5 +45,10 @@ public:
 
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Items")
 	TArray<class UItem*> StoredItems;
-		
+
+	// Equipment
+
+	bool SetEquipmentSlot();
+	bool ClearEquipmentSlot();
+	
 };

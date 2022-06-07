@@ -7,7 +7,7 @@
 
 // Sets default values for this component's properties
 UInventoryComponent::UInventoryComponent(){
-	GridSize = 28;
+	GridSize = 20;
 }
 
 
