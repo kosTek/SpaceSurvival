@@ -123,4 +123,30 @@ bool UInventoryComponent::SwitchItems(int FromIndex, int ToIndex) {
 	return false;
 }
 
+bool UInventoryComponent::SetEquipmentSlot(int index, class AEquipment* item) {
+	if (!item || index < 0 || index > 1) {
+		return false;
+	}
+	
+	EquipmentSlots[index] = item;
+
+	OnEquipmentUpdated.Broadcast();
+	
+	return true;
+}
+
+bool UInventoryComponent::ClearEquipmentSlot(int index) {
+
+	if (index < 0 || index > 1) {
+		return false;
+	}
+
+	EquipmentSlots[index] = nullptr;
+	
+	OnEquipmentUpdated.Broadcast();
+
+	return true;
+}
+
+
 

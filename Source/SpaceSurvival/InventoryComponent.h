@@ -8,6 +8,7 @@
 
 
 DECLARE_DYNAMIC_MULTICAST_DELEGATE(FOnInventoryUpdated);
+DECLARE_DYNAMIC_MULTICAST_DELEGATE(FOnEquipmentUpdated);
 
 UCLASS( ClassGroup=(Custom), meta=(BlueprintSpawnableComponent) )
 class SPACESURVIVAL_API UInventoryComponent : public UActorComponent
@@ -47,8 +48,16 @@ public:
 	TArray<class UItem*> StoredItems;
 
 	// Equipment
+	UPROPERTY(BlueprintAssignable, Category = "Inventory")
+	FOnEquipmentUpdated OnEquipmentUpdated;
 
-	bool SetEquipmentSlot();
-	bool ClearEquipmentSlot();
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Items")
+	TArray<class AEquipment*> EquipmentSlots;
+	
+	UFUNCTION(BlueprintCallable)
+	bool SetEquipmentSlot(int index, class AEquipment* item);
+	
+	UFUNCTION(BlueprintCallable)
+	bool ClearEquipmentSlot(int index);
 	
 };
