@@ -52,10 +52,10 @@ public:
 	FOnEquipmentUpdated OnEquipmentUpdated;
 
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Items")
-	TArray<class AEquipment*> EquipmentSlots;
+	TArray<class UItemEquipment*> EquipmentSlots;
 	
 	UFUNCTION(BlueprintCallable)
-	bool SetEquipmentSlot(int index, class AEquipment* item);
+	bool SetEquipmentSlot(int index, class UItemEquipment* item, int itemIndex);
 	
 	UFUNCTION(BlueprintCallable)
 	bool ClearEquipmentSlot(int index);

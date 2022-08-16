@@ -8,6 +8,9 @@
 // Sets default values for this component's properties
 UInventoryComponent::UInventoryComponent(){
 	GridSize = 20;
+
+	EquipmentSlots.Add(nullptr);
+	EquipmentSlots.Add(nullptr);
 }
 
 
@@ -123,14 +126,18 @@ bool UInventoryComponent::SwitchItems(int FromIndex, int ToIndex) {
 	return false;
 }
 
-bool UInventoryComponent::SetEquipmentSlot(int index, class AEquipment* item) {
+bool UInventoryComponent::SetEquipmentSlot(int index, class UItemEquipment* item, int itemIndex) {
 	if (!item || index < 0 || index > 1) {
 		return false;
 	}
 	
 	EquipmentSlots[index] = item;
 
+	UE_LOG(LogTemp, Warning, TEXT("[Inventory] Equipment slot set at %i index!"), index);
+	
 	OnEquipmentUpdated.Broadcast();
+
+	RemoveItem(itemIndex);
 	
 	return true;
 }
