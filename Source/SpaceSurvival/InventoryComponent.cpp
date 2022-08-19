@@ -142,6 +142,29 @@ bool UInventoryComponent::SetEquipmentSlot(int index, class UItemEquipment* item
 	return true;
 }
 
+bool UInventoryComponent::SwitchEquipmentSlot(int FromIndex, int ToIndex) {
+	if (FromIndex > 2 || FromIndex < 0) {
+		return false;
+	}
+
+	if (ToIndex > 2 || ToIndex < 0) {
+		return false;
+	}
+
+	if (FromIndex == ToIndex) {
+		return false;
+	}
+
+	class UItemEquipment* Buffer = EquipmentSlots[FromIndex];
+
+	EquipmentSlots[FromIndex] = EquipmentSlots[ToIndex];
+	EquipmentSlots[ToIndex] = Buffer;
+
+	OnEquipmentUpdated.Broadcast();
+	
+	return true;
+}
+
 bool UInventoryComponent::ClearEquipmentSlot(int index) {
 
 	if (index < 0 || index > 1) {

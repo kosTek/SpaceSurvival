@@ -26,6 +26,7 @@ protected:
 public:	
 
 	// Inventory
+	UFUNCTION(BlueprintCallable)
 	bool AddItem(class UItem* Item, int Index = -1);
 	bool RemoveItem(class UItem* Item);
 
@@ -56,6 +57,9 @@ public:
 	
 	UFUNCTION(BlueprintCallable)
 	bool SetEquipmentSlot(int index, class UItemEquipment* item, int itemIndex);
+
+	UFUNCTION(BlueprintCallable)
+	bool SwitchEquipmentSlot(int FromIndex, int ToIndex);
 	
 	UFUNCTION(BlueprintCallable)
 	bool ClearEquipmentSlot(int index);
