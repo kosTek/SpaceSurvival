@@ -31,10 +31,22 @@ public:
 	UPROPERTY(EditDefaultsOnly, Category = "Equipment")
 	TSubclassOf<ASpaceSurvivalProjectile> ProjectileClass;
 	
-	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category = "Equipment")
+	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category = "Animations")
 	UAnimMontage* SingleFireMontage;
 
-	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category = "Equipment")
+	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category = "Animations")
+	UAnimMontage* WeaponEquipMontage;
+
+	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category = "Animations")
+	UAnimMontage* WeaponHolsterMontage;
+
+	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category = "Animations")
+	UAnimMontage* PlayerEquipMontage;
+
+	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category = "Animations")
+	UAnimMontage* PlayerHolsterMontage;
+
+	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category = "Sound")
 	USoundWave* SoundWave;
 
 	UPROPERTY(BlueprintAssignable, Category = "Equipment")
@@ -43,16 +55,18 @@ public:
 	UFUNCTION()
 	void ReloadWeapon();
 	
-	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category = "Equipment")
+	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category = "Ammo")
 	int MaxAmmo;
 
-	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Equipment")
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Ammo")
 	int CurrentAmmo;
 
-	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category = "Equipment")
+	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category = "Ammo")
 	int NumberOfAmmoRemovedOnShot;
 
-	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category = "Equipment")
+	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category = "Sound")
 	USoundWave* NoAmmoSound;
-	
+
+	bool CanPlayEmptySound;
+
 };

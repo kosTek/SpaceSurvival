@@ -6,6 +6,7 @@
 #include "SpaceSurvivalCharacter.h"
 #include "SpaceSurvivalProjectile.h"
 #include "Kismet/GameplayStatics.h"
+#include "TimerManager.h"
 
 AEquipmentWeapon::AEquipmentWeapon() {
 	Reloading = false;
@@ -15,6 +16,8 @@ AEquipmentWeapon::AEquipmentWeapon() {
 	CurrentAmmo = MaxAmmo;
 
 	NumberOfAmmoRemovedOnShot = 1;
+
+	CanPlayEmptySound = true;
 }
 
 void AEquipmentWeapon::PrimaryFire() {
@@ -47,8 +50,10 @@ void AEquipmentWeapon::PrimaryFire() {
 		ActorSpawnParams.SpawnCollisionHandlingOverride = ESpawnActorCollisionHandlingMethod::AdjustIfPossibleButDontSpawnIfColliding;
 
 		if (CurrentAmmo <= 0) { // Ammo Check
-			if (NoAmmoSound != nullptr) {
+			if (NoAmmoSound != nullptr && CanPlayEmptySound) {
 				UGameplayStatics::PlaySound2D(this, NoAmmoSound);
+
+				CanPlayEmptySound = false;
 			}
 		}else {
 			World->SpawnActor<ASpaceSurvivalProjectile>(ProjectileClass, SpawnLocation, SpawnRotation, ActorSpawnParams);
@@ -69,6 +74,8 @@ void AEquipmentWeapon::SecondaryFire() {
 void AEquipmentWeapon::ReloadWeapon() {
 
 	CurrentAmmo = MaxAmmo;
+
+	CanPlayEmptySound = true;
 	
 	ChangeReloadingState();
 }
@@ -81,6 +88,7 @@ void AEquipmentWeapon::Reload() {
 		UE_LOG(LogTemp, Warning, TEXT("[Equipment] Weapon Reloading!"));
 	}
 }
+
 
 
 
